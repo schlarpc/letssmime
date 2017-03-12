@@ -9,7 +9,7 @@ install:
 build: off
 
 test_script:
-  - "%PYTHON%\\python.exe setup.py test"
+  - "build.cmd %PYTHON%\\python.exe setup.py test"
 
 after_test:
   - "%PYTHON%\\Scripts\\pyinstaller.exe --onefile letssmime"
