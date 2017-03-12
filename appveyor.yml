@@ -1,0 +1,23 @@
+environment:
+  matrix:
+    - PYTHON: "C:\\Python35-x64"
+
+install:
+  # We need wheel installed to build wheels
+  - "%PYTHON%\\python.exe -m pip install pyinstaller"
+
+build: off
+
+test_script:
+  - "%PYTHON%\\python.exe setup.py test"
+
+after_test:
+  - "%PYTHON%\\Scripts\\pyinstaller.exe --onefile letssmime"
+
+artifacts:
+  - path: dist\*
+
+#on_success:
+#  You can use this step to upload your artifacts to a public website.
+#  See Appveyor's documentation for more details. Or you can simply
+#  access your wheels from the Appveyor "artifacts" tab for your build.
