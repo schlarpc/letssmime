@@ -12,7 +12,8 @@ test_script:
   - "%PYTHON%\\python.exe setup.py test"
 
 after_test:
-  - "%PYTHON%\\Scripts\\pyinstaller.exe --onefile -n letssmime letssmime\\__main__.py"
+  - "echo import letssmime; letssmime.main() > pyinstaller_bootstrap.py"
+  - "%PYTHON%\\Scripts\\pyinstaller.exe --onefile -n letssmime pyinstaller_bootstrap.py"
 
 artifacts:
   - path: dist\*
