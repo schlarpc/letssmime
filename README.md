@@ -4,4 +4,4 @@ Automatically gets S/MIME certificates signed by Comodo. I really just wanted th
 
 Requires the `openssl` tool for creating the PKCS12 bundle at the end, which makes me sad. I just can't bring myself to do more ASN.1 manipulation right now. There's work in progress to get the needed stuff added to `cryptography`, which would make it much easier: https://github.com/pyca/cryptography/issues/2860
 
-Run it with `python3 -m letssmime`.
+Run it with `python3 -m letssmime`. Or, there's a Windows binary build on AppVeyor (but you still need an OpenSSL binary): https://ci.appveyor.com/project/schlarpc/letssmime/build/artifacts
