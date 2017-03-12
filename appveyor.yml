@@ -12,7 +12,7 @@ test_script:
   - "%PYTHON%\\python.exe setup.py test"
 
 after_test:
-  - "%PYTHON%\\Scripts\\pyinstaller.exe --onefile letssmime"
+  - "%PYTHON%\\Scripts\\pyinstaller.exe --onefile letssmime\\__main__.py"
 
 artifacts:
   - path: dist\*
