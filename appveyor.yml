@@ -3,13 +3,13 @@ environment:
     - PYTHON: "C:\\Python35-x64"
 
 install:
-  # We need wheel installed to build wheels
+  - "%PYTHON%\\python.exe -m pip install -r requirements.txt"
   - "%PYTHON%\\python.exe -m pip install pyinstaller"
 
 build: off
 
 test_script:
-  - "build.cmd %PYTHON%\\python.exe setup.py test"
+  - "%PYTHON%\\python.exe setup.py test"
 
 after_test:
   - "%PYTHON%\\Scripts\\pyinstaller.exe --onefile letssmime"
